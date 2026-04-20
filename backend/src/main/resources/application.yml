@@ -1,0 +1,109 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/property_management?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: root
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: HikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+  redis:
+    host: localhost
+    port: 6379
+    password: 
+    database: 0
+    timeout: 2000
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1
+
+  servlet:
+    context-path: /api
+
+  # 文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# MyBatis Plus 配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: assign_id
+      table-prefix: 
+  mapper-locations: classpath:mapper/**/*.xml
+
+# JWT 配置
+jwt:
+  secret: propertyManagementSecretKey2024
+  expiration: 86400000 # 24小时
+  token-header: Authorization
+  token-prefix: Bearer 
+
+# 文件上传配置
+file:
+  upload-dir: /opt/property-management/upload/
+  max-size: 10485760 # 10MB
+  allowed-types: image/jpeg,image/png,image/gif,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document
+
+# 日志配置
+logging:
+  level:
+    com.property.management: debug
+    org.springframework.security: debug
+  file:
+    name: logs/property-management.log
+
+# Knife4j API文档配置
+knife4j:
+  enable: true
+  production: false
+  basic:
+    enable: false
+    username: admin
+    password: admin
+
+# 自定义配置
+property:
+  management:
+    version: 1.0.0
+    name: 物业管理系统
+    description: 基于SpringBoot+Vue的物业管理系统
+    author: Property Management Team
+
+# 邮件配置（可选）
+mail:
+  host: smtp.gmail.com
+  port: 587
+  username: 
+  password: 
+  properties:
+    mail:
+      smtp:
+        auth: true
+        starttls:
+          enable: true
+
+# 跨域配置
+cors:
+  allowed-origins: "*"
+  allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
+  allowed-headers: "*"
+  allow-credentials: true
+  max-age: 3600

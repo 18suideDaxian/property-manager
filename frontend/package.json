@@ -1,0 +1,33 @@
+{
+  "name": "property-management-frontend",
+  "version": "1.0.0",
+  "description": "物业管理系统前端",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "vue",
+    "vite",
+    "element-plus"
+  ],
+  "author": "Property Management Team",
+  "license": "MIT",
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "axios": "^1.6.7",
+    "element-plus": "^2.7.6",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.2",
+    "echarts": "^5.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@vitejs/plugin-vue": "^4.6.2",
+    "typescript": "^5.4.3",
+    "vite": "^5.2.11"
+  }
+}
