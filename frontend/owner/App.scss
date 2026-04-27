@@ -1,0 +1,45 @@
+/* App.scss - 全局 scss 变量和 mixin */
+
+/* 主题色 */
+$primary-color: #2979ff;
+$primary-light: #e6f0ff;
+$success-color: #19be6b;
+$warning-color: #ff9900;
+$error-color: #fa3534;
+$info-color: #909399;
+
+/* 文字颜色 */
+$text-color: #333333;
+$text-secondary: #666666;
+$text-placeholder: #999999;
+$text-light: #cccccc;
+
+/* 背景色 */
+$bg-color: #f5f6fa;
+$bg-white: #ffffff;
+$bg-grey: #f7f8fa;
+
+/* 边框色 */
+$border-color: #eaedf0;
+
+/* 字体大小 */
+$font-xs: 22rpx;
+$font-sm: 24rpx;
+$font-base: 28rpx;
+$font-md: 30rpx;
+$font-lg: 32rpx;
+$font-xl: 36rpx;
+$font-xxl: 44rpx;
+
+/* 间距 */
+$spacing-xs: 10rpx;
+$spacing-sm: 16rpx;
+$spacing-base: 24rpx;
+$spacing-md: 30rpx;
+$spacing-lg: 40rpx;
+
+/* 圆角 */
+$radius-sm: 8rpx;
+$radius-base: 12rpx;
+$radius-lg: 16rpx;
+$radius-round: 50%;

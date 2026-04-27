@@ -1,0 +1,141 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页",
+        "navigationBarBackgroundColor": "#2979ff",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/fee/fee",
+      "style": {
+        "navigationBarTitleText": "物业缴费",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/repair/repair",
+      "style": {
+        "navigationBarTitleText": "在线报修"
+      }
+    },
+    {
+      "path": "pages/repair-list/repair-list",
+      "style": {
+        "navigationBarTitleText": "我的报修",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/announcement/announcement",
+      "style": {
+        "navigationBarTitleText": "社区公告",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/announcement-detail/announcement-detail",
+      "style": {
+        "navigationBarTitleText": "公告详情"
+      }
+    },
+    {
+      "path": "pages/room/room",
+      "style": {
+        "navigationBarTitleText": "我的房产"
+      }
+    },
+    {
+      "path": "pages/profile/profile",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#2979ff",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/my-rooms/my-rooms",
+      "style": {
+        "navigationBarTitleText": "我的家业"
+      }
+    },
+    {
+      "path": "pages/my-bills/my-bills",
+      "style": {
+        "navigationBarTitleText": "我的缴费",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/my-repairs/my-repairs",
+      "style": {
+        "navigationBarTitleText": "我的报修",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/edit-name/edit-name",
+      "style": {
+        "navigationBarTitleText": "修改昵称"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "物业管理",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f5f6fa",
+    "app-plus": {
+      "background": "#f5f6fa"
+    }
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#2979ff",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tab-home.png",
+        "selectedIconPath": "static/tab-home-active.png"
+      },
+      {
+        "pagePath": "pages/announcement/announcement",
+        "text": "公告",
+        "iconPath": "static/tab-notice.png",
+        "selectedIconPath": "static/tab-notice-active.png"
+      },
+      {
+        "pagePath": "pages/room/room",
+        "text": "家业",
+        "iconPath": "static/tab-room.png",
+        "selectedIconPath": "static/tab-room-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "static/tab-my.png",
+        "selectedIconPath": "static/tab-my-active.png"
+      }
+    ]
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+    }
+  }
+}
