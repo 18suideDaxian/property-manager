@@ -1,4 +1,24 @@
--- 接上表
+-- 13. 缴费记录表
+CREATE TABLE `payment_record` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '记录ID',
+  `payment_no` VARCHAR(50) NOT NULL COMMENT '缴费流水号',
+  `bill_id` BIGINT NOT NULL COMMENT '账单ID',
+  `owner_id` BIGINT DEFAULT NULL COMMENT '业主ID',
+  `amount` DECIMAL(10,2) NOT NULL COMMENT '缴费金额',
+  `pay_method` TINYINT NOT NULL COMMENT '支付方式：1-现金 2-微信 3-支付宝 4-银行转账 5-POS机',
+  `transaction_no` VARCHAR(100) DEFAULT NULL COMMENT '支付平台交易号',
+  `status` TINYINT NOT NULL DEFAULT 1 COMMENT '状态：1-成功 2-退款中 3-已退款',
+  `pay_time` DATETIME NOT NULL COMMENT '缴费时间',
+  `operator_id` BIGINT DEFAULT NULL COMMENT '操作人ID（管理员代缴）',
+  `remark` VARCHAR(500) DEFAULT NULL COMMENT '备注',
+  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_payment_no` (`payment_no`),
+  KEY `idx_bill_id` (`bill_id`),
+  KEY `idx_owner_id` (`owner_id`),
+  KEY `idx_pay_time` (`pay_time`),
+  KEY `idx_status` (`status`),
   CONSTRAINT `fk_payment_record_bill` FOREIGN KEY (`bill_id`) REFERENCES `fee_bill` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='缴费记录表';
 
