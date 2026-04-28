@@ -104,8 +104,8 @@ property-manager/
 mysql -u root -p
 
 # 创建数据库
-CREATE DATABASE property_management DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE property_management;
+CREATE DATABASE property_managementone DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE property_managementone;
 
 # 按顺序执行（不要乱序）
 source database/schema.sql       # 建表
