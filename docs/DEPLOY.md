@@ -76,7 +76,7 @@ docker-compose up -d
 
 ```bash
 # 进入 MySQL 容器
-docker exec -it property-mysql mysql -u property -p property_management
+docker exec -it property-mysql mysql -u property -p property_managementone
 
 # 在 MySQL 命令行中执行
 source /docker-entrypoint-initdb.d/02-seed-data.sql
@@ -85,7 +85,7 @@ source /docker-entrypoint-initdb.d/02-seed-data.sql
 或者直接将 seed-data.sql 挂载后执行：
 
 ```bash
-docker exec -i property-mysql mysql -u property -pProperty@2024 property_management < ../database/seed-data.sql
+docker exec -i property-mysql mysql -u property -pProperty@2024 property_managementone < ../database/seed-data.sql
 ```
 
 ### 5. 验证部署
@@ -136,18 +136,18 @@ docker-compose up -d backend
 #### 1.1 创建数据库
 
 ```sql
-CREATE DATABASE property_management DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE property_managementone DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 CREATE USER 'property'@'localhost' IDENTIFIED BY 'your_password';
-GRANT ALL PRIVILEGES ON property_management.* TO 'property'@'localhost';
+GRANT ALL PRIVILEGES ON property_managementone.* TO 'property'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
 #### 1.2 导入数据
 
 ```bash
-mysql -u property -p property_management < database/schema.sql
-mysql -u property -p property_management < database/init-data.sql
-mysql -u property -p property_management < database/seed-data.sql  # 可选测试数据
+mysql -u property -p property_managementone < database/schema.sql
+mysql -u property -p property_managementone < database/init-data.sql
+mysql -u property -p property_managementone < database/seed-data.sql  # 可选测试数据
 ```
 
 ### 2. 后端部署
@@ -159,7 +159,7 @@ mysql -u property -p property_management < database/seed-data.sql  # 可选测�
 ```yaml
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/property_management?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/property_managementone?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: property
     password: your_password
   redis:
@@ -269,7 +269,7 @@ npm run build:h5
 # 数据库每日备份脚本
 #!/bin/bash
 DATE=$(date +%Y%m%d)
-mysqldump -u property -p property_management > /backup/db_$DATE.sql
+mysqldump -u property -p property_managementone > /backup/db_$DATE.sql
 # 保留最近 30 天
 find /backup -name "db_*.sql" -mtime +30 -delete
 ```

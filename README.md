@@ -198,7 +198,7 @@ docker compose down
 ```yaml
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/property_management
+    url: jdbc:mysql://localhost:3306/property_managementone
     username: root
     password: your_password
   

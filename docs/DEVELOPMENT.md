@@ -54,15 +54,15 @@ mysql -u root -p
 ```
 
 ```sql
-CREATE DATABASE property_management DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE property_managementone DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
 #### 3. 导入数据库结构和初始化数据
 
 ```bash
-mysql -u root -p property_management < database/schema.sql
-mysql -u root -p property_management < database/init-data.sql
-mysql -u root -p property_management < database/seed-data.sql  # 可选测试数据
+mysql -u root -p property_managementone < database/schema.sql
+mysql -u root -p property_managementone < database/init-data.sql
+mysql -u root -p property_managementone < database/seed-data.sql  # 可选测试数据
 ```
 
 #### 4. 安装后端依赖
